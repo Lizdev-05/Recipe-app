@@ -9,7 +9,6 @@ gem 'rails', '~> 7.0.4'
 #  Add devise
 gem 'devise'
 
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
