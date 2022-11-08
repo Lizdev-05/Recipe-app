@@ -1,0 +1,47 @@
+
+<div class="flex flex-col m-10 gap-4 items-center justify-center bg-white">
+
+<div>
+<div class=" px-8 py-4 w-96 h-fit bg-white rounded-lg shadow-lg">
+<h1 class="text-xl font-bold text-center text-gray-700" >New recipe</h1>
+  <%= form_with(model: @recipe) do |form| %>
+  <% if @recipe.errors.any? %>
+    <ul>
+      <% @recipe.errors.each do |error| %>
+        <li role="alert"><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="my-4">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter name" %>
+  </div>
+  <br>
+  <div class="my-4">
+    <%= form.label :preparation_time %>
+    <%= form.text_field :preparation_time, class: "form-control", placeholder: "Enter preparation time" %>
+  </div>
+  <br>
+  <div class="my-4">
+    <%= form.label :cooking_time %>
+    <%= form.text_field :cooking_time, class: "form-control", placeholder: "Enter cooking time" %>
+  </div>
+  <br>
+  <div class="my-4">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control", placeholder: "Enter description", rows:"5" %>
+  </div>
+  <br>
+  <div class="my-4">
+    <%= form.check_box :public ,class: "form-check-input"%>
+    <%= form.label :public, class:"form-check-label" %>
+  </div>
+  <br>
+  <div class="bg-gray-900 hover:bg-gray-800 rounded-lg py-2 text-center cursor-pointer mb-4 font-bold text-gray-100">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
