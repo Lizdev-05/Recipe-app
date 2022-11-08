@@ -3,13 +3,13 @@
     <div class="grid grid-cols-6 p-5 gap-y-2">
 
       <!-- Description -->
-      <div class="col-span-5 md:col-span-4 ml-4">
+      <a href="<%=recipe_path(recipe.id)%>" class="col-span-5 md:col-span-4 ml-4">
 
         <p class="text-sky-500 font-bold text-xs"> <%=recipe.name%> </p>
 
         <p class="text-gray-600 font-bold"> <%=recipe.description%> </p>
 
-      </div>
+      </a>
 
      <div class="flex col-start-2 ml-4 md:col-start-auto md:ml-0 md:justify-end rounded-lg text-slate-50 font-bold bg-red-700  py-1 px-3 text-sm w-fit h-fit">
          <%= button_to 'Delete', recipe, :method => :delete, data: {turbo_method: :delete} %>
