@@ -13,7 +13,7 @@
 				</div>
 				<div class="divide-y divide-gray-200">
 					<div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo:false } ) do |f| %>
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo:false }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="relative">
         <%= f.label :name %><br />
@@ -34,10 +34,11 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"  %>
       </div>
-      <div class="bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform rounded-lg py-2 text-center font-bold cursor-pointer mt-8 text-gray-700">
-        <%= render "devise/shared/links" %>
+      <div class="bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform rounded-lg py-2 text-center font-bold cursor-pointer mt-8 text-gray-700 actions">
+         <%= f.submit "Sign up" %>
       </div>
     <% end %>
+      <p class="mt-8">Already have an account? <%= render "devise/shared/links" %></p>
 					</div>
 				</div>
 			</div>
