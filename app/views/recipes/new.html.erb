@@ -12,27 +12,27 @@
       <% end %>
     </ul>
   <% end %>
-  <div class="my-4">
+  <div class="my-0 flex flex-col">
     <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control", placeholder: "Enter name" %>
+    <%= form.text_field :name, class: "px-4 py-2 rounded-md mt-2 w-full", placeholder: "Enter name" %>
   </div>
   <br>
-  <div class="my-4">
+  <div class="my-0  flex flex-col">
     <%= form.label :preparation_time %>
-    <%= form.text_field :preparation_time, class: "form-control", placeholder: "Enter preparation time" %>
+    <%= form.text_field :preparation_time, class: "px-4 py-2 rounded-md mt-2 w-full", placeholder: "Enter preparation time" %>
   </div>
   <br>
-  <div class="my-4">
+  <div class="my-0  flex flex-col">
     <%= form.label :cooking_time %>
-    <%= form.text_field :cooking_time, class: "form-control", placeholder: "Enter cooking time" %>
+    <%= form.text_field :cooking_time,class: "px-4 py-2 rounded-md mt-2 w-full", placeholder: "Enter cooking time" %>
   </div>
   <br>
-  <div class="my-4">
+  <div class="my-0  flex flex-col">
     <%= form.label :description %>
-    <%= form.text_area :description, class: "form-control", placeholder: "Enter description", rows:"5" %>
+    <%= form.text_area :description, class: "px-4 py-2 rounded-md mt-2 w-full",placeholder: "Enter description", rows:"5" %>
   </div>
   <br>
-  <div class="my-4">
+  <div class="my-0">
     <%= form.check_box :public ,class: "form-check-input"%>
     <%= form.label :public, class:"form-check-label" %>
   </div>
