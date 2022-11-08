@@ -8,7 +8,7 @@
 		<div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
 			<div class="max-w-md mx-auto">
 				<div>
-					<h1 class="text-2xl font-semibold">Add Your Food</h1>
+					<h1 class="text-2xl font-semibold">Edit Your Food</h1>
                      <% if @food.errors.any? %>
                             <ul>
                             <% @food.errors.full_messages.each do |msg|%>
@@ -38,7 +38,7 @@
                             <%= form.number_field :price, placeholder: 100, required: true, autofocus: true, class: "peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" %>
                             </div>
                             <div class="bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg text-white rounded-md px-2 py-1 text-center font-bold cursor-pointer mt-8">
-                            <%= form.submit "Add Food", data: { disable_with: "Loading" } %>
+                            <%= form.submit "Update Food", data: { disable_with: "Loading" } %>
                             </div>
                         <% end %>				
                     </div>
