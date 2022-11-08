@@ -20,12 +20,9 @@ class FoodsController < ApplicationController
     def edit
         @food = current_user.foods.find(params[:id])
         end
-    
 
     def update
         @food = current_user.foods.find(params[:id])
-         
-
         if @food.update(food_params)
             redirect_to foods_path, notice: 'Food was successfully updated.'
         else
