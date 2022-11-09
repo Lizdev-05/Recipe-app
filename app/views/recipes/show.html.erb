@@ -22,22 +22,28 @@
     </div>
     </div>
     <div class="flex justify-between">
-      <div class="text-right mt-8"><%= link_to "Generate shopping list", new_recipe_recipe_food_path(@recipe), class: "py-2 px-4 rounded-lg bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg hover:shadow-xl" %></div>
+      <div class="text-right mt-8 mr-10"><%= link_to "Generate shopping list", '#', class: "py-2 px-4 rounded-lg bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg hover:shadow-xl" %></div>
       <div class="text-right mt-8"><%= link_to "Add Ingredian", new_recipe_recipe_food_path(@recipe), class: "py-2 px-4 rounded-lg bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg hover:shadow-xl" %></div>
     </div>
      <hr class="my-8 h-px bg-gray-200 border-0 dark:bg-gray-700">
-		<div class="overflow-auto lg:overflow-visible ">
+		<div class="overflow-auto lg:overflow-visible flex justify-center ">
 			<table class="table text-white border-separate space-y-6 text-sm">
-				<thead class="bg-gray-800 text-white">
-					<tr>
-						<th class="p-3">Food</th>
-						<th class="p-3 text-left">Quantity</th>
-						<th class="p-3 text-left">Measurement</th>
-						<th class="p-3 text-left">Unit Price</th>
-						<th class="p-3 text-left">Action</th>
-					</tr>
-				</thead>
+        <% if @recipe_foods.length > 0 %>
+        <thead>
+          <tr>
+            <th class="border border-slate-800 py-2">Food</th>
+            <th class="border border-slate-800 py-2">Quantity</th>
+            <th class="border border-slate-800 py-2">Value</th>
+            <th class="border border-slate-800 py-2">Actions</th>
+          </tr>
+        </thead>
         
+          <% @recipe_foods.each do |recipe_food| %>
+          <%= render :partial => 'recipes/ingredian', :locals => {:recipe_food => recipe_food} %>
+          <% end %>
+    <% else %>
+      <p class="text-white">Ingredient list is empty.</p>
+    <% end %>
         </table>
                 </div>
 	</div>

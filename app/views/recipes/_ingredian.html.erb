@@ -1,0 +1,26 @@
+<tbody>
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<div class="ml-3">
+									<div class=""><%= recipe_food.food.name%></div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							<%= recipe_food.quantity %>
+						</td>
+						<td class="p-3 font-bold">
+							<%= recipe_food.quantity * recipe_food.food.price %>
+						</td>
+						<td class="p-3 ">
+							<span class="text-gray-400 hover:text-gray-100  ml-2">
+								<i class="material-icons-round text-base"><%= button_to "delete_outline", "#{recipe_recipe_foods_path(@recipe)}/#{recipe_food.id}", method: :delete, data: { confirm: "Are you sure?" } %></i>
+						    </span>
+						</td>
+                        <td>
+                        <td>
+                        <td>
+                        <td>
+					</tr>
+				</tbody>
