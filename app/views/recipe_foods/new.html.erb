@@ -1,0 +1,18 @@
+<div class="flex justify-center bg-gray-900 h-full ">
+  <%= form_with url: recipe_recipe_foods_path, scope: :recipe_food, class: "bg-gray-800 text-white rounded-lg p-4 my-16 w-96 h-fit" do |form| %>
+    <p class="text-lg font-bold text-center mb-4">Add Ingredient</p>
+    <div class="my-4 flex justify-between">
+      <%= form.label :quantity, "Quantity", placeholder: 0 %>
+      <%= form.number_field :quantity, class: "bg-gray-600 p-2 text-white rounded-md" %>
+    </div>
+    <div class="my-4 flex justify-between">
+      <%= form.label :food_id, "Food" %>
+      <div class="bg-gray-600 p-2 text-white rounded-md">
+        <%= form.collection_select(:food_id, @foods, :id, :name,{prompt: "Select a Food"}, {class: "bg-gray-600 p-2 text-white rounded-md w-64"}) %>
+      </div>
+    </div>
+    <div class=" text-center py-2 px-4 rounded-lg bg-blue-600 hover:bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg hover:shadow-xl">
+      <%= form.submit "Add Ingredient" %>
+    </div>
+  <% end %>
+</div>
