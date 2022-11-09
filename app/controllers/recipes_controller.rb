@@ -8,7 +8,15 @@ class RecipesController < ApplicationController
   end
 
   def show
+    recipe_test = Recipe.find(params[:id])
+    unless recipe_test.user == current_user || recipe_test.public?
+      flash[:alert] =
+        'You do not have access to see details.'
+      return redirect_to recipes_path
+    end
+
     @recipe = Recipe.find(params[:id])
+    @recipe_foods = RecipeFood.where(recipe_id: @recipe.id)
   end
 
   def create
