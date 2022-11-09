@@ -1,14 +1,14 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
-<div class="flex justify-center min-h-screen bg-gray-900">
-	<div class="col-span-12 mt-5">
+<div class="flex justify-center min-h-screen bg-gray-900 align-center content-center p-4">
+	<div class=" w-[80%]">
     <div class="flex justify-between">
      <div class="flex flex-col text-white">
-     <span class="color-gray-50 ">Name: <%= @recipe.name %></span>
-      <span>Preparation Time: <%= @recipe.preparation_time %></span>
-      <span>Cooking Time: <%= @recipe.cooking_time %></span>
-      <span>Description: <%= @recipe.description %></span>
+     <span class="color-gray-50 "><b class="text-blue-400">Name:</b> <%= @recipe.name %></span>
+      <span><b class="text-blue-400">Preparation Time:</b> <%= @recipe.preparation_time %></span>
+      <span><b class="text-blue-400">Cooking Time:</b> <%= @recipe.cooking_time %></span>
+      <span><b class="text-blue-400">Description:</b> <%= @recipe.description %></span>
       </div>
        <span class="ml-auto mr-2 justify-self-end text-sm font-medium text-gray-900 dark:text-gray-300">Public</span>
     <div class="flex flex-col flex-row-reverse text-white">
