@@ -3,7 +3,7 @@
     <p class="text-xl font-bold mb-2">Public Recipes</p>
     <ul class="flex flex-col items-center py-4">
       <% @public_recipes.each do |recipe| %>
-        <li class="bg-white rounded-lg flex justify-between items-center w-[60%] my-2 py-2 px-4 border-2 border-gray-400 hover:shadow-xl">
+        <li class="bg-white rounded-lg flex justify-between items-center w-[60%] my-2 py-2 px-4 border-2 shadow-2xl border-gray-200 rounded-xl hover:bg-gray-50 shadow-2xl">
           <div class="p-2">
             <div class="mb-2 text-blue-600 hover:text-blue-300 text-xl font-bold">
               <%= link_to recipe.name, recipe_path(recipe) %>
@@ -17,11 +17,7 @@
             </div>
             <div class="flex justify-between w-[50%]">
               <span>Total price:</span>
-              <% if recipe.recipe_foods.find_by(recipe_id: recipe.id) %>
-                    <span class="font-bold"><%= recipe.recipe_foods.find_by(recipe_id: recipe.id).quantity * recipe.recipe_foods.find_by(recipe_id: recipe.id).food.price %></span>
-              <% else %>
-                <span class="font-bold">0</span>
-              <% end %>
+               <span class="font-bold">$<%= @totals[recipe.name] %></span>
             </div>
           </div>
         </li>
