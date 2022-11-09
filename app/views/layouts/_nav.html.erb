@@ -10,9 +10,11 @@
          <% if current_user%>
         <!-- Nav Links -->
         <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-          <li><a class="hover:text-gray-200" href="#">Food</a></li>
-          <li><a class="hover:text-gray-200" href="#">Recipe</a></li>
-          <li><a class="hover:text-gray-200" href="#">Public Food</a></li>
+          
+          <li><%= link_to "Foods", foods_path, class: "hover:text-gray-200" %></li>
+          <li><%= link_to "Recipes", recipes_path, class: "hover:text-gray-200" %></li>
+          <li><%= link_to "Public Recipes", "/public_recipes", class: "hover:text-gray-200" %></li>
+          <li><%= link_to "General Shopping List", "/general_shopping_list", class: "hover:text-gray-200" %></li>
         </ul>
         <!-- Header Icons -->
         <div class="hidden xl:flex items-center space-x-5 items-center">
