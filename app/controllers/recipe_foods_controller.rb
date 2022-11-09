@@ -1,5 +1,5 @@
 class RecipeFoodsController < ApplicationController
-def new
+  def new
     recipe = Recipe.find(params[:recipe_id])
     unless recipe.user == current_user
       flash[:alert] =
@@ -10,9 +10,6 @@ def new
     @recipe_food = RecipeFood.new
     @foods = current_user.foods
   end
-
- 
-
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
