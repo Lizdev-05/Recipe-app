@@ -1,7 +1,7 @@
 <div class="flex flex-wrap">
   <section class="relative mx-auto bg-gray-900 shadow-2xl text-white w-screen">
       <!-- navbar -->
-    <nav class="flex justify-between ">
+    <nav data-controller="header" class="flex justify-between" >
       <div class="px-5 xl:px-12 py-6 flex w-full items-center">
         <a class="text-3xl font-bold font-heading" href="#">
           <!-- <img class="h-9" src="logo.png" alt="logo"> -->
@@ -26,7 +26,7 @@
            <% end %>
       </div> 
       <!-- Responsive navbar -->
-      <a @click="isOpen = !isOpen" class="navbar-burger self-center mr-12 xl:hidden" href="#">
+      <a data-header-target="openMobileMenu" class="navbar-burger self-center mr-12 xl:hidden" href="#">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -35,11 +35,20 @@
 
         <!-- Nav Links -->
         <% if current_user%>
-        <ul :class="isOpen? 'block' : 'hidden'" class="px-3">
+        <ul 
+        class="xl:hidden px-3"
+        id="mobile-dropdown-menu"
+        data-transition-enter="transition ease-out duration-100"
+        data-transition-enter-start="transform opacity-0 scale-95"
+        data-transition-enter-end="transform opacity-100 scale-100"
+        data-transition-leave="transition ease-in duration-75"
+        data-transition-leave-start="transform opacity-100 scale-100"
+        data-transition-leave-end="transform opacity-0 scale-95"
+        >
         <li><a class=" block hover:bg-gray-700 rounded py-1 px-2" href="#">Hello <%= current_user.name %>!</a></li>
-          <li><a class=" block hover:bg-gray-700 rounded py-1 px-2" href="#">Food</a></li>
-          <li><a class=" block hover:bg-gray-700 rounded py-1 px-2" href="#">Recipe</a></li>
-          <li><a class=" block hover:bg-gray-700 rounded py-1 px-2" href="#">Public Food</a></li>
+          <li><%= link_to "Foods", foods_path, class: "block hover:bg-gray-700 rounded py-1 px-2" %></li>
+          <li><%= link_to "Recipes", recipes_path, class: "block hover:bg-gray-700 rounded py-1 px-2" %></li>
+          <li><%= link_to "Public Recipes", "/public_recipes", class: "block hover:bg-gray-700 rounded py-1 px-2" %></li>
           <li><%= link_to 'Log out', destroy_user_session_path, method: :delete , data: { turbo: false }, class: " block hover:bg-gray-700 rounded py-1 px-2" %></li>
         </ul>
    <% end %>
