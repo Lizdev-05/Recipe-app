@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   before(:each) do
-    # this should run only in test enviroment else it will be painful 
+    # this should run only in test enviroment else it will be painful
     User.destroy_all
     @user = User.create!(name: 'Hamma', email: 'hammaagazarok@gmail.com', password: '123456')
     @recipe = Recipe.create!(name: 'pitzza', preparation_time: '10 min', cooking_time: '3 min', description: 'famous italian food',
-                            public: true, user: @user)
+                             public: true, user: @user)
   end
 
   it 'should create a recipe by current user' do
