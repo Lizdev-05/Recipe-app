@@ -22,7 +22,7 @@
 						    </span>
 
 							<span class="text-gray-400 hover:text-gray-100  ml-2">
-								<i class="material-icons-round text-base"><%= button_to "delete_outline", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" } %></i>
+								<i class="material-icons-round text-base"><%= button_to "delete_outline", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, id: "delete_button" %></i>
 						    </span>
 						</td>
 					</tr>
