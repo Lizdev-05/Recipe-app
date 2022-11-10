@@ -54,13 +54,13 @@ class FoodsController < ApplicationController
         test = @foods.select { |f| f.name == food.name }[0]
         test.quantity = test.quantity - recipe_food.quantity
       end
-    end	   
-        @foods = @foods.select { |f| f.quantity.negative? }
-        @foods.each { |f| f.quantity *= -1 }
-        @total = 0
-        @foods.each do |food|
-          @total += (food.price * food.quantity)
-        end
+    end
+    @foods = @foods.select { |f| f.quantity.negative? }
+    @foods.each { |f| f.quantity *= -1 }
+    @total = 0
+    @foods.each do |food|
+      @total += (food.price * food.quantity)
+    end
   end
 
   def food_params
