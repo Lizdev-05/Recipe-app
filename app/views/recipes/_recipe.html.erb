@@ -1,0 +1,12 @@
+  <li class="bg-white rounded-lg flex justify-between items-center w-[60%] my-2 py-2 px-4 border-2 border-b-4 border-gray-200 rounded-xl hover:bg-gray-50 shadow-2xl">
+          <div class="p-2">
+            <div class="mb-2 text-blue-600 hover:text-blue-900 text-xl font-bold">
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            </div>
+            <%= button_to "Delete", recipe_path(recipe), :method => :delete, data: {turbo_method: :delete}, class: "bg-red-600 px-2 py-1 rounded-lg hover:bg-red-900 hover:text-white" %>
+          </div>
+          <div class="w-[80%] px-2 py-1">
+             <%=recipe.description%>
+          </div>
+    </li>
+

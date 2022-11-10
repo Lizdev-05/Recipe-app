@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+   
+    <script src="https://cdn.tailwindcss.com"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "turbo", type: "module" %>
+
   </head>
 
-  <body>
+  <body class="h-screen bg-gray-200">
+  <%= render 'layouts/nav' %>
+  <%=render 'partial/logInAlert' %>
     <%= yield %>
   </body>
 </html>

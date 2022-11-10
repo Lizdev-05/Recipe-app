@@ -1,0 +1,30 @@
+				<tbody>
+					<tr class="bg-gray-800">
+						<td class="p-3">
+							<div class="flex align-items-center">
+								<div class="ml-3">
+									<div class=""><%= food.name%></div>
+								</div>
+							</div>
+						</td>
+						<td class="p-3">
+							<%= food.quantity %>
+						</td>
+						<td class="p-3 font-bold">
+							<%= food.measurement %>
+						</td>
+						<td class="p-3">
+							<span class="bg-blue-600 text-gray-50 rounded-md px-2">$ <%= food.price %></span>
+						</td>
+						<td class="p-3 ">
+							<span class="text-gray-400 hover:text-gray-100  mx-2">
+								<i class="material-icons-outlined text-base"><%= link_to "edit", edit_food_path(food) %></i>
+						    </span>
+
+							<span class="text-gray-400 hover:text-gray-100  ml-2">
+								<i class="material-icons-round text-base"><%= button_to "delete_outline", food_path(food.id), method: :delete, data: { confirm: "Are you sure?" }, id: "delete_button" %></i>
+						    </span>
+						</td>
+					</tr>
+				</tbody>
+			
