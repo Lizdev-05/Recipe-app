@@ -9,7 +9,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <%= javascript_include_tag "turbo", type: "module" %>
+    <script>
+    HamToggle = () => {
+    let menu = document.getElementById('mobile-dropdown-menu');
+console.log("humburger pressed")
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+    </script>
 
   </head>
 

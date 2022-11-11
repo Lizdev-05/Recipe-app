@@ -1,9 +1,9 @@
 <div class="flex justify-center text-center p-8">
-  <div class="w-[80%]">
+  <div class="w-[90%]">
     <p class="text-xl font-bold mb-2">Public Recipes</p>
     <ul class="flex flex-col items-center py-4">
       <% @public_recipes.each do |recipe| %>
-        <li class="bg-white rounded-lg flex justify-between items-center w-[60%] my-2 py-2 px-4 border-2 shadow-2xl border-gray-200 rounded-xl hover:bg-gray-50 shadow-2xl">
+        <li class="bg-white rounded-lg flex justify-between items-center w-[100%] my-2 py-2 px-2 border-2 shadow-2xl border-gray-200 rounded-xl hover:bg-gray-50 shadow-2xl">
           <div class="p-2">
             <div class="mb-2 text-blue-600 hover:text-blue-300 text-xl font-bold">
               <%= link_to recipe.name, recipe_path(recipe) %>
