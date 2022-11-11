@@ -6,6 +6,8 @@ My Recipe App
 
 This is a Ruby on Rails app that allows user to create, delete, and read recipes created by them or the community, allowing the users to decide whether they'd be public or not. Additionally, it allows users to create food records and generate a shopping list based on the missing food for their recipes. It comes with authentication and authorization functionality.
 
+## Live Link
+ [Live-demo](https://tranquil-crag-64773.herokuapp.com/users/sign_in)
 ## Built With
 
 - Languages:
