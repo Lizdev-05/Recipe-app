@@ -96,7 +96,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.11.0)
-    ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -132,7 +131,10 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.9-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.13.9-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.4.4)
     pg (1.4.4-x64-mingw-ucrt)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -238,13 +240,13 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
   capybara
   debug
   devise
-  ffi
   importmap-rails
   jbuilder
   pg (~> 1.1)
